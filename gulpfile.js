@@ -38,14 +38,14 @@ gulp.task('clean:dist', function() {
 //watch task
 gulp.task('watch', ['browserSync'], function (){
   // Reloads the browser whenever HTML or JS files change
-  gulp.watch('dist/**/*.js', browserSync.reload); 
+  gulp.watch('dist/**/*', browserSync.reload); 
 });
 
 // gulp sequence
 gulp.task('build', function (callback) {
   runSequence(
-
     [ 
+    'clean:dist',
     'index',
     'copying-scripts',
     'browserSync',
