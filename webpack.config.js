@@ -26,7 +26,9 @@ module.exports = {
       app: {
         environment: JSON.stringify(process.env.APP_ENVIRONMENT || 'development')
       }
-    })
+    }),
+        new webpack.HotModuleReplacementPlugin()
+
   ]
 
 };
